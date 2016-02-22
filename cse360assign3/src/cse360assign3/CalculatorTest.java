@@ -78,15 +78,17 @@ public class CalculatorTest {
 	}
 	
 	
+	
 	/* Test if the history is correct */
 	@Test
 	public void testHistory(){
 		Calculator calc = new Calculator();
-		calc.getHistory();
-		fail("Default Fail");
+		calc.divide(0);
+		calc.add(1);
+		calc.add(24);
+		calc.subtract(5);
+		calc.multiply(5);
+		calc.divide(25);
+		assertTrue("The history doesn't of the calculator doesn't match 0 + 1 + 24 - 5 * 5 / 25", calc.getHistory().equals("0 + 1 + 24 - 5 * 5 / 25"));
 	}
-
-
-
-
 }
