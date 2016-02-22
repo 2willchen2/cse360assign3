@@ -17,7 +17,7 @@ public class CalculatorTest {
 	public void testTotal() {
 		Calculator calc = new Calculator();
 		calc.getTotal();
-		fail("Default Fail");
+		assertTrue("The getTotal returned isn't 0.",calc.getTotal() == 0);
 	}
 	
 	/* Test if the added amount is correct */
@@ -25,31 +25,43 @@ public class CalculatorTest {
 	public void testAdd() {
 		Calculator calc = new Calculator();
 		calc.add(5);
-		fail("Default Fail");
+		calc.add(12);
+		calc.add(23);
+		assertTrue("The added total doesn't sum up to 40.",calc.getTotal() ==  40);
 	}
 	
 	/* Test if the subtracted amount is correct */
 	@Test
 	public void testSub(){
 		Calculator calc = new Calculator();
-		calc.subtract(5);
-		fail("Default Fail");
+		calc.add(40);
+		calc.subtract(15);
+		calc.subtract(1);
+		calc.subtract(3);
+		calc.subtract(2);
+		assertTrue("The subtracted total doesn't euqat 19", calc.getTotal() == 19);
 	}
 	
 	/* Test if the multiplied amount is correct */
 	@Test
 	public void testMult(){
 		Calculator calc = new Calculator();
-		calc.multiply(5);
-		fail("Default Fail");
+		calc.add(13);
+		calc.multiply(2);
+		calc.multiply(1);
+		calc.multiply(3);
+		assertTrue("The multiplied total doesn't equal 78.",calc.getTotal() == 78);
 	}
 	
 	/* Test if the divided amount is correct */
 	@Test
 	public void testDiv(){
 		Calculator calc = new Calculator();
+		calc.add(1000);
 		calc.divide(5);
-		fail("Default Fail");
+		calc.divide(2);
+		calc.divide(10);
+		assertTrue("The divided total doesn't equal 10", calc.getTotal() ==  10);
 	}
 	
 	/* Test if the history is correct */
@@ -57,7 +69,7 @@ public class CalculatorTest {
 	public void testHistory(){
 		Calculator calc = new Calculator();
 		calc.getHistory();
-		fail("Default Fail");
+		assertTrue("The calculator history isn't an empty string", calc.getHistory().equals(""));
 	}
 
 
