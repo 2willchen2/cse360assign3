@@ -58,18 +58,32 @@ public class CalculatorTest {
 	public void testDiv(){
 		Calculator calc = new Calculator();
 		calc.add(1000);
-		calc.divide(5);
-		calc.divide(2);
-		calc.divide(10);
-		assertTrue("The divided total doesn't equal 10", calc.getTotal() ==  10);
+  		calc.divide(5);
+ 		calc.divide(2);
+ 		calc.divide(10);
+ 		assertTrue("The divided total doesn't equal 10", calc.getTotal() ==  10);
+
 	}
+	
+	/* Test if the divided by 0 is equal to 0 */
+	@Test
+	public void testDivZero(){
+		Calculator calc = new Calculator();
+		calc.add(1000);
+  		calc.divide(5);
+ 		calc.divide(2);
+ 		calc.divide(0);
+ 		assertTrue("The divided total doesn't equal to 0", calc.getTotal() ==  0);
+
+	}
+	
 	
 	/* Test if the history is correct */
 	@Test
 	public void testHistory(){
 		Calculator calc = new Calculator();
 		calc.getHistory();
-		assertTrue("The calculator history isn't an empty string", calc.getHistory().equals(""));
+		fail("Default Fail");
 	}
 
 

@@ -1,4 +1,3 @@
-
 package cse360assign3;
 
 public class Calculator {
@@ -15,6 +14,7 @@ public class Calculator {
 	
 	public void add (int value) {
 		total += value;
+		
 	}
 	
 	public void subtract (int value) {
