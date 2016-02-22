@@ -1,3 +1,5 @@
+
+
 package cse360assign3;
 
 public class Calculator {
@@ -30,7 +32,10 @@ public class Calculator {
 		{
 			total = 0;
 		}
+		else
+		{
 		total = total/value;
+		}
 	}
 	
 	public String getHistory () {
